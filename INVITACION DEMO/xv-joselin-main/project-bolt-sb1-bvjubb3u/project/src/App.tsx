@@ -10,7 +10,7 @@ export default function App() {
   const [opened, setOpened] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-[#0f0d0a]">
+    <div className="relative min-h-screen bg-[#FAF7F2] text-[#2C3B32]">
       <AnimatePresence mode="wait">
         {!opened ? (
           <StartScreen key="start" onOpen={() => setOpened(true)} />
