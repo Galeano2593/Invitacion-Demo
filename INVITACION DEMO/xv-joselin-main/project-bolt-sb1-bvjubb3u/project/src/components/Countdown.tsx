@@ -59,12 +59,12 @@ export default function Countdown({ targetDate }: Props) {
           initial={{ opacity: 0, y: 30 }}
           animate={visible ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: i * 0.15, duration: 0.7, ease: "easeOut" }}
-          className="flex flex-col items-center rounded-2xl border border-amber-300/20 bg-amber-300/5 px-3 py-6 backdrop-blur-sm sm:px-6"
+          className="flex flex-col items-center rounded-2xl border border-[#B8975A]/30 bg-white/80 px-3 py-6 shadow-sm backdrop-blur-sm sm:px-6"
         >
-          <span className="font-serif text-4xl font-light text-gold-gradient tabular-nums sm:text-5xl">
+          <span className="font-serif text-4xl font-medium text-[#2C3B32] tabular-nums sm:text-5xl">
             {String(u.value).padStart(2, "0")}
           </span>
-          <span className="mt-2 font-sans-lux text-[10px] uppercase tracking-[0.25em] text-amber-200/60">
+          <span className="mt-2 font-sans-lux text-[10px] font-semibold uppercase tracking-[0.25em] text-[#6B7C70]">
             {u.label}
           </span>
         </motion.div>
