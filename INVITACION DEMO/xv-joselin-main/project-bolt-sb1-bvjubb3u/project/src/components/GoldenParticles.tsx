@@ -12,12 +12,12 @@ interface Particle {
 
 interface Props {
   density?: number;
-  color?: string;
+  color?: string; // Formato "R, G, B"
 }
 
 export default function GoldenParticles({
-  density = 60,
-  color = "201, 169, 97",
+  density = 50,
+  color = "184, 151, 90", // Champagne Gold (#B8975A)
 }: Props) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
@@ -34,10 +34,10 @@ export default function GoldenParticles({
     const particles: Particle[] = Array.from({ length: density }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      size: Math.random() * 2.5 + 0.5,
+      size: Math.random() * 2 + 0.5, // Ligeramente más pequeñas para mayor elegancia
       speedY: Math.random() * 0.4 + 0.1,
       speedX: (Math.random() - 0.5) * 0.3,
-      opacity: Math.random() * 0.6 + 0.2,
+      opacity: Math.random() * 0.5 + 0.2,
       twinkle: Math.random() * Math.PI * 2,
     }));
 
@@ -58,8 +58,8 @@ export default function GoldenParticles({
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${color}, ${p.opacity * flicker})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = `rgba(${color}, ${flicker})`;
+        ctx.shadowBlur = 4; // Sombra más suave para fondos claros
+        ctx.shadowColor = `rgba(${color}, 0.4)`;
         ctx.fill();
       });
       raf = requestAnimationFrame(render);
@@ -80,7 +80,7 @@ export default function GoldenParticles({
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0 h-full w-full"
+      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-60"
     />
   );
 }
