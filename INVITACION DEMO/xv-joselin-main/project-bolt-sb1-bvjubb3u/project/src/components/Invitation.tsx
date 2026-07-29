@@ -51,20 +51,20 @@ export default function Invitation() {
     >
       <GoldenParticles density={40} />
 
-      {/* PRESENTACIÓN */}
+      {/* PRESENTACIÓN DE BODA */}
       <Section className="flex min-h-screen flex-col items-center justify-center text-center">
         <Reveal>
           <p className="font-sans-lux text-xs uppercase tracking-[0.5em] text-amber-200/60">
-            Mis 15 Años
+            NUESTRA BODA
           </p>
         </Reveal>
 
         <Reveal delay={0.2}>
           <p className="mt-8 font-serif text-xl font-light text-amber-100 sm:text-2xl">
-            Bernarda Guzmán
+            Con la bendición de Dios y de nuestros padres
           </p>
           <p className="mt-2 font-sans-lux text-xs uppercase tracking-[0.25em] text-amber-200/60">
-            Tiene el honor de invitarte a celebrar los XV años de su amada hija
+            Tenemos el honor de invitarte a celebrar nuestra unión matrimonial
           </p>
         </Reveal>
 
@@ -77,18 +77,16 @@ export default function Invitation() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 font-serif text-3xl font-light leading-tight text-gold-gradient sm:text-5xl"
+          className="mt-8 font-serif text-4xl font-light leading-tight text-gold-gradient sm:text-6xl"
         >
-          Joselin Mairel
-          <br />
-          Castro Guzmán
+          {eventData.quinceaneraName}
         </motion.h1>
 
         <Reveal delay={0.6}>
           <p className="mx-auto mt-8 max-w-md font-serif text-lg font-light italic leading-relaxed text-amber-50/90">
-            Hay momentos que solo suceden una vez en la vida.
+            "El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección."
             <br />
-            Hoy quiero compartir contigo uno de los más especiales.
+            Hoy iniciamos una nueva etapa y queremos compartir la alegría con quienes más amamos.
           </p>
         </Reveal>
       </Section>
@@ -98,7 +96,7 @@ export default function Invitation() {
         <Reveal className="text-center">
           <Ornament />
           <h2 className="mt-6 font-serif text-3xl font-light text-amber-50 sm:text-4xl">
-            Cuenta regresiva...
+            Cuenta regresiva para el gran día...
           </h2>
         </Reveal>
         <div className="mt-12">
@@ -111,10 +109,10 @@ export default function Invitation() {
         <Reveal className="text-center">
           <Ornament />
           <h2 className="mt-6 font-serif text-3xl font-light text-amber-50 sm:text-4xl">
-            Lindos Momentos
+            Nuestra Historia de Amor
           </h2>
           <p className="mt-3 font-sans-lux text-xs uppercase tracking-[0.3em] text-amber-200/50">
-            
+            Nuestros mejores momentos juntos
           </p>
         </Reveal>
         <div className="mt-12">
@@ -122,13 +120,13 @@ export default function Invitation() {
         </div>
       </Section>
 
-      {/* INFORMACIÓN */}
+      {/* INFORMACIÓN DEL EVENTO */}
       <Section id="info">
         <Reveal>
           <div className="rounded-3xl border border-amber-300/20 bg-gradient-to-b from-amber-300/10 to-transparent p-8 text-center backdrop-blur-sm sm:p-12">
             <Ornament />
             <h2 className="mt-6 font-serif text-3xl font-light text-amber-50 sm:text-4xl">
-              Celebremos Juntos Este Día Especial
+              Celebremos Juntos Nuestra Boda
             </h2>
 
             <div className="mt-10 space-y-8">
@@ -168,7 +166,7 @@ export default function Invitation() {
                   <MapPin className="h-6 w-6 text-amber-300" />
                 </div>
                 <p className="font-sans-lux text-[10px] uppercase tracking-[0.3em] text-amber-200/50">
-                  Lugar
+                  Lugar del Evento
                 </p>
                 <p className="mx-auto mt-2 max-w-xs font-serif text-xl leading-relaxed text-amber-50">
                   {eventData.venueName}
@@ -184,19 +182,19 @@ export default function Invitation() {
                 className="inline-flex items-center gap-2 rounded-full border border-amber-300/40 bg-amber-300/10 px-8 py-4 font-sans-lux text-xs uppercase tracking-[0.25em] text-amber-100 transition hover:bg-amber-300/20"
               >
                 <MapPin className="h-4 w-4" />
-                Ver ubicación
+                Ver ubicación GPS
               </motion.a>
             </div>
           </div>
         </Reveal>
       </Section>
 
-      {/* CÓDIGO DE VESTIMENTA + COLORES */}
+      {/* CÓDIGO DE VESTIMENTA Y COLORES RESERVADOS */}
       <Section id="dresscode">
         <Reveal>
           <div className="rounded-3xl border border-amber-300/20 bg-amber-300/5 p-8 text-center backdrop-blur-sm sm:p-12">
             
-            {/* Contenedor de las dos imágenes PNG (Traje y Vestido) */}
+            {/* Contenedor de trajes */}
             <div className="mx-auto mb-6 flex items-center justify-center gap-6">
               {/* Imagen Traje Hombre */}
               <div className="flex flex-col items-center gap-2">
@@ -217,7 +215,7 @@ export default function Invitation() {
                 <div className="flex h-24 w-24 items-center justify-center rounded-full border border-amber-300/30 bg-amber-300/5 p-3 shadow-md">
                   <img 
                     src="/Vestido.png" 
-                    alt="Vestido de mujer" 
+                    alt="Vestido de novia/gala" 
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
@@ -231,7 +229,7 @@ export default function Invitation() {
               Código de Vestimenta
             </h2>
             <p className="mt-3 font-serif text-3xl italic text-gold-gradient sm:text-4xl">
-              Guapos y Divinas
+              Traje Formal / Gala
             </p>
           </div>
         </Reveal>
@@ -242,7 +240,7 @@ export default function Invitation() {
             Colores Reservados
           </h3>
           <p className="mt-3 font-sans-lux text-xs uppercase tracking-[0.25em] text-amber-200/50">
-            Estos colores están reservados para la homenajeada.
+            Reservados exclusivamente para la novia
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
             {eventData.reservedColors.map((c, i) => (
@@ -267,7 +265,7 @@ export default function Invitation() {
         </Reveal>
       </Section>
 
-      {/* REGALOS */}
+      {/* MESA DE REGALOS / LLUVIA DE SOBRES */}
       <Section id="regalos">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl border border-amber-300/20 bg-gradient-to-b from-amber-300/10 to-transparent p-8 text-center backdrop-blur-sm sm:p-12">
@@ -281,27 +279,29 @@ export default function Invitation() {
               <Gift className="h-16 w-16 text-amber-300" />
             </motion.div>
             <h2 className="font-serif text-2xl font-light text-amber-50 sm:text-3xl">
-              Regalos
+              Mesa de Regalos
             </h2>
             <p className="mx-auto mt-5 max-w-sm font-serif text-lg italic leading-relaxed text-amber-100/80">
-              Tú serás partícipe de mi próximo sueño.
+              Su presencia es nuestro mejor regalo.
               <br />
               <br />
-              ¡Lluvia de Sobres!
+              Si desean hacernos un obsequio, tendremos la opción de:
+              <br />
+              <strong className="text-amber-200 font-normal">¡Lluvia de Sobres!</strong>
             </p>
           </div>
         </Reveal>
       </Section>
 
-      {/* CONFIRMACIÓN */}
+      {/* CONFIRMACIÓN DE ASISTENCIA */}
       <Section id="confirmacion">
         <Reveal className="text-center">
           <Ornament />
           <h2 className="mt-6 font-serif text-3xl font-light text-amber-50 sm:text-4xl">
-            Confirmación
+            Confirmación de Asistencia
           </h2>
           <p className="mt-3 font-sans-lux text-xs uppercase tracking-[0.25em] text-amber-200/50">
-            Por favor confirma tu asistencia antes del 15/09/2026
+            Agradecemos confirmar tu asistencia con anticipación
           </p>
         </Reveal>
         <div className="mt-10">
@@ -325,14 +325,13 @@ export default function Invitation() {
 
           <Reveal>
             <p className="mx-auto max-w-md font-serif text-xl font-light italic leading-relaxed text-amber-50/90">
-              Gracias por acompañarme en uno de los momentos más importantes de
-              mi vida.
+              Gracias por acompañarnos a celebrar el día más importante de nuestras vidas.
             </p>
           </Reveal>
 
           <Reveal delay={0.3}>
             <p className="mx-auto mt-6 max-w-md font-serif text-lg font-light italic leading-relaxed text-amber-100/80">
-              Tu presencia hará que este día sea inolvidable.
+              Tu presencia hará que nuestra boda sea sencillamente inolvidable.
             </p>
           </Reveal>
 
@@ -340,10 +339,10 @@ export default function Invitation() {
             <div className="mt-10">
               <Ornament />
               <p className="mt-6 font-sans-lux text-[10px] uppercase tracking-[0.4em] text-amber-200/50">
-                Con cariño
+                Con mucho amor
               </p>
               <p className="mt-4 font-serif text-2xl font-light text-gold-gradient sm:text-3xl">
-                Joselin Mairel Castro Guzmán
+                {eventData.quinceaneraName}
               </p>
             </div>
           </Reveal>
@@ -352,7 +351,7 @@ export default function Invitation() {
 
       <footer className="relative border-t border-amber-300/10 py-8 text-center">
         <p className="font-sans-lux text-[10px] uppercase tracking-[0.3em] text-amber-200/40">
-          Mis XV Años · {eventData.eventDateLabel}
+          Nuestra Boda · {eventData.eventDateLabel}
         </p>
       </footer>
     </motion.div>
