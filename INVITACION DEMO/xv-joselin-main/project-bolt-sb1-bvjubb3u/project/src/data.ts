@@ -9,14 +9,17 @@ export const eventData = {
   whatsappNumber: "573000000000",
   whatsappMessage:
     "¡Hola! Soy ___ y confirmo mi asistencia a la boda de Mariana & Alejandro. Asistiremos ___ personas.",
+  
+  // Fotos estéticas de boda (calidad IA / fotografía profesional)
   slideshow: [
-    "/FOTO 1.jpeg",
-    "/FOTO 2.jpeg",
-    "/FOTO 3.jpeg",
-    "/FOTO 4.jpeg",
-    "/FOTO 5.jpeg",
-    "/FOTO 6.jpeg",
+    "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000",
+    "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=1000",
+    "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1000",
+    "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=1000",
+    "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=1000",
+    "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1000",
   ],
+
   reservedColors: [
     { name: "Blanco (Exclusivo Novia)", hex: "#FFFFFF" },
     { name: "Marfil / Ivory", hex: "#FFFFF0" },
