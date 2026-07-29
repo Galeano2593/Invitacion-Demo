@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import GoldenParticles from "./GoldenParticles";
+import { eventData } from "../data";
 
 interface Props {
   onOpen: () => void;
@@ -59,7 +60,7 @@ export default function StartScreen({ onOpen }: Props) {
               transition={{ duration: 1.2, delay: 0.5, ease: "easeOut" }}
               className="mt-6 font-serif text-4xl font-light text-gold-gradient sm:text-5xl"
             >
-              Mis XV Años
+              Nuestra Boda
             </motion.h1>
 
             <div className="mx-auto my-8 h-px w-16 bg-gradient-to-r from-transparent via-amber-400/60 to-transparent" />
@@ -110,21 +111,21 @@ function Envelope3D({ opening, onOpen }: { opening: boolean; onOpen: () => void 
         {/* Cuerpo del sobre */}
         <div className="absolute bottom-0 left-0 right-0 top-12 rounded-lg bg-gradient-to-b from-[#1a1611] to-[#0f0d0a] shadow-2xl ring-1 ring-amber-300/20" />
 
-        {/* Carta */}
+        {/* Carta dentro del sobre */}
         <motion.div
           initial={{ y: 0 }}
           animate={opening ? { y: -180, opacity: 0.3 } : { y: 0 }}
           transition={{ duration: 1.4, ease: "easeInOut" }}
           className="absolute left-4 right-4 top-6 z-10 rounded-md bg-gradient-to-b from-[#f5efe0] to-[#e8dcc8] p-6 text-center shadow-xl ring-1 ring-amber-400/30"
         >
-          <p className="font-serif text-xl text-[#8b6f3a]">Mis XV Años</p>
+          <p className="font-serif text-xl text-[#8b6f3a]">Nuestra Boda</p>
           <div className="mx-auto my-3 h-px w-10 bg-amber-500/40" />
           <p className="font-sans-lux text-[10px] uppercase tracking-[0.3em] text-[#8b6f3a]/70">
-            Joselin Mairel
+            {eventData.quinceaneraName}
           </p>
         </motion.div>
 
-        {/* Solapa */}
+        {/* Solapa del sobre */}
         <motion.div
           initial={{ rotateX: 0 }}
           animate={opening ? { rotateX: 180 } : { rotateX: 0 }}
@@ -149,7 +150,7 @@ function Envelope3D({ opening, onOpen }: { opening: boolean; onOpen: () => void 
           />
         </motion.div>
 
-        {/* Sello dorado */}
+        {/* Sello dorado con las iniciales */}
         {!opening && (
           <motion.button
             onClick={onOpen}
@@ -162,7 +163,7 @@ function Envelope3D({ opening, onOpen }: { opening: boolean; onOpen: () => void 
             aria-label="Abrir sobre"
           >
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-gradient text-[#1a1611] shadow-lg ring-2 ring-amber-200/40">
-              <span className="font-serif text-2xl font-semibold">J</span>
+              <span className="font-serif text-lg font-bold tracking-tighter">M&A</span>
             </div>
           </motion.button>
         )}
