@@ -11,11 +11,12 @@ interface Particle {
   size: number;
 }
 
+// Colores actualizados: Champán Dorado, Verde Eucalipto y Verde Sage
 const COLORS = [
-  "rgba(201, 169, 97, 1)",
-  "rgba(245, 231, 196, 1)",
-  "rgba(193, 123, 92, 1)",
-  "rgba(212, 191, 160, 1)",
+  "rgba(184, 151, 90, 1)",  // Champagne Gold (#B8975A)
+  "rgba(44, 59, 50, 1)",    // Eucalyptus Green (#2C3B32)
+  "rgba(107, 124, 112, 1)", // Sage Green (#6B7C70)
+  "rgba(212, 182, 126, 1)", // Soft Gold
 ];
 
 export default function Fireworks() {
@@ -34,18 +35,18 @@ export default function Fireworks() {
     let lastLaunch = 0;
 
     const launch = (x: number, y: number) => {
-      const count = 40 + Math.floor(Math.random() * 20);
+      const count = 35 + Math.floor(Math.random() * 15);
       const color = COLORS[Math.floor(Math.random() * COLORS.length)];
       for (let i = 0; i < count; i++) {
         const angle = (Math.PI * 2 * i) / count;
-        const speed = Math.random() * 3 + 1.5;
+        const speed = Math.random() * 2.5 + 1;
         particles.push({
           x,
           y,
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
           life: 0,
-          maxLife: 60 + Math.random() * 40,
+          maxLife: 50 + Math.random() * 30,
           color,
           size: Math.random() * 2 + 1,
         });
@@ -53,10 +54,10 @@ export default function Fireworks() {
     };
 
     const render = (t: number) => {
-      ctx.fillStyle = "rgba(15, 13, 10, 0.15)";
-      ctx.fillRect(0, 0, width, height);
+      // FIX CLAVE: Limpiar el canvas sin pintar un rectángulo oscuro encima
+      ctx.clearRect(0, 0, width, height);
 
-      if (t - lastLaunch > 1400) {
+      if (t - lastLaunch > 1500) {
         lastLaunch = t;
         launch(
           Math.random() * width * 0.8 + width * 0.1,
@@ -69,7 +70,7 @@ export default function Fireworks() {
         p.life++;
         p.x += p.vx;
         p.y += p.vy;
-        p.vy += 0.04;
+        p.vy += 0.03; // Gravedad suave
         p.vx *= 0.99;
         const alpha = 1 - p.life / p.maxLife;
         if (alpha <= 0) {
@@ -79,8 +80,8 @@ export default function Fireworks() {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = p.color.replace("1)", `${alpha})`);
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = p.color;
+        ctx.shadowBlur = 4; // Sombra sutil para no ensuciar el fondo claro
+        ctx.shadowColor = p.color.replace("1)", `${alpha * 0.5})`);
         ctx.fill();
       }
       raf = requestAnimationFrame(render);
@@ -101,7 +102,7 @@ export default function Fireworks() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 h-full w-full"
+      className="pointer-events-none absolute inset-0 h-full w-full z-0 opacity-80"
     />
   );
 }
